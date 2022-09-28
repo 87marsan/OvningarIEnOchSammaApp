@@ -115,6 +115,7 @@ namespace ConsoleApp25
             Console.WriteLine("4. Magic Numbers");
             Console.WriteLine("5. Temperaturomvandling");
             Console.WriteLine("6. Magisk ålder");
+            Console.WriteLine("7. GetSum");
             Console.WriteLine("A. Avsluta");
             
             string användaresVal = "";
@@ -144,6 +145,19 @@ namespace ConsoleApp25
                     case "6":
                         MagiskÅlder();
                         break;
+                    case "7": 
+                        int a, b;
+                        Console.WriteLine("Ange ett tal: ");
+                        a = int.Parse(Console.ReadLine());
+                        Console.WriteLine("Ange ett tal: ");
+                        b = int.Parse(Console.ReadLine());
+                        int summa = GetSum(a, b);
+                        Console.WriteLine($"{a} + {b} = {summa}");
+                        Console.ReadKey();
+                        Console.Clear();    
+                        Huvudmeny();
+                        break;
+
                     case "a":
                         Console.WriteLine("Bye bye...");
                         break;
@@ -194,6 +208,12 @@ namespace ConsoleApp25
             Console.Clear();
             Huvudmeny();
 
+        }
+
+        public static int GetSum(int a, int b)
+        {
+            int summa = a + b;
+            return summa;
         }
     }
 }
